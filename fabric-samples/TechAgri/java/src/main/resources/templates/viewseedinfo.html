@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MongoDB/Spring Boot tutorial from tests4geeks.com</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-spacing: 0px;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>ProductName</th>
+        <th>ProductId</th>
+        <th>OrderDate</th>
+        <th>OrderStatus</th>
+        <th>Weight</th>
+        <th>CertificateNo</th>
+        <th>Producer</th>
+        <th>LotNo</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${seedList}">
+        <td th:text="${car.ProductName}"></td>
+        <td th:text="${car.ProductId}"></td>
+        <td th:text="${car.OrderDate}"></td>
+        <td th:text="${car.OrderStatus}"></td>
+        <td th:text="${car.Weight}"></td>
+        <td th:text="${car.CertificateNo}"></td>
+        <td th:text="${car.Producer}"></td>
+        <td th:text="${car.LotNo}"></td>
+
+    </tr>
+    </tbody>
+</table>
+<br />
+<h2>Add Car</h2>
+<form action="/viewseedinfo" method="post">
+    ProductName <input type="text" id="ProductName" name="ProductName" ><br />
+    ProductId<input type="text" id="ProductId" name="ProductId" ><br />
+    OrderDate<input type="text" id="OrderDate" name="OrderDate" ><br />
+    OrderStatus<input type="text" id="OrderStatus" name="OrderStatus" ><br />
+    Weight<input type="text" id="Weight" name="Weight" ><br />
+    CertificateNo<input type="text" id="CertificateNo" name="CertificateNo" ><br />
+    Producer<input type="text" id="Producer" name="Producer" ><br />
+    LotNor<input type="text" id="LotNo" name="LotNo" ><br />
+
+    <input type="submit" th:value="submit">
+</form>
+<h2>Search for cars</h2>
+<form action="/search" method="GET">
+    <input type="text" name="search" id="search" th:value="${search}" />
+    <input type="submit" value="Search" />
+</form>
+</body>
+</html>

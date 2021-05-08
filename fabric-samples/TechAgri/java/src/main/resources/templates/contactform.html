@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<style>
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+
+    color: white;
+  }
+body {font-family: Arial, Helvetica, sans-serif;
+   background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("images/jute_fields.jpg ");
+   background-repeat:repeat;
+   background-size:cover;
+
+}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/index">Home</a>
+  <a href="/login">Login</a>
+  <a href="/feedbackform">Feedback</a>
+  <a href="/about">About Us</a>
+  <a href="/governmentschemes">Government Schemes</a>
+  <a style="float: right" href="javascript:history.go(-1)">Back</a>
+</div>
+<h2 style="text-align: center"><b>We are happy to help you</b></h2>
+<h3 style="text-align: center"><b>Send your queries</b></h3>
+
+<div class="container">
+  <form action="/contactform" method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="phno">Phone no</label>
+    <input type="text" id="phno" name="contactno" placeholder="Enter phone no..">
+
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="India">India</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <button class="btn btn-primary" type="submit" onclick="Warn()">Submit</button>
+
+    <a href="/" class="btn btn-outline-primary" role="button">Go Back</a>
+  </form>
+</div>
+<script type = "text/javascript">
+          function Warn() {
+            alert ("Queries Sent Successfully!");}
+            </script>
+
+</body>
+</html>

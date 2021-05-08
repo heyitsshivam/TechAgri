@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;
+  background-image:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("images/jutebag.jpg ");
+  background-repeat:repeat;
+  background-size:cover;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+
+  color: white;
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/index">Home</a>
+  <a href="/login">Login</a>
+  <a href="/contactform">Contact Us</a>
+  <a href="/about">About Us</a>
+  <a href="/governmentschemes">Government Schemes</a>
+
+  <a style="float: right" href="javascript:history.go(-1)">Back</a>
+
+</div>
+<br>
+<h2 style="text-align: center"> <b>Send us your Feedback<br>(हमें अपनी प्रतिक्रिया भेजें)</b></h2>
+<br>
+<div class="container">
+  <form action="/feedbackform" method="post">
+    <label for="inputfname">First Name <br> (पहला नाम)</label>
+    <input type="text" id="inputfname" name="firstname"  placeholder="Your name..">
+
+    <label for="inputlname">Last Name <br>(उपनाम)</label>
+    <input type="text" id="inputlname" name="lastname" placeholder="Your last name..">
+    <label for="tel" th:maxlength="15">Phone no<br>(फ़ोन नंबर)</label>
+    <input type="text" id="tel" name="contactno" placeholder="Enter phone no..">
+
+
+    <label for="inputsubject">Subject<br>(विषय)</label>
+    <textarea id="inputsubject" name="subject" placeholder="Write something..  कुछ लिखो.." style="height:200px"></textarea>
+
+    <button class="btn btn-primary " type="submit" onclick="Warn()">Submit</button>
+
+    <a href="/" class="btn btn-outline-primary" role="button">Go Back</a>
+  </form>
+</div>
+<script type = "text/javascript">
+  function Warn() {
+    alert ("Feedback Submitted Successfully!");}
+</script>
+
+</body>
+</html>
