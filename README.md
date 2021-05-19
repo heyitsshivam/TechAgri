@@ -5,3 +5,13 @@ Install jdk
 Install Mongodb on docker
 #Run on Springboot 
 #Run Localhost:8080
+TECHNOLOGy USED :
+Springboot
+mongodb
+docker
+hyperledger fabric
+thymeleaf
+html
+css
+js
+
